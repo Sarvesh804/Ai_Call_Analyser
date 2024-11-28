@@ -1,25 +1,15 @@
 {
     "version": 2,
-    "projects": {
-      "frontend": {
-        "root": "frontend",
-        "builds": [
-          {
-            "src": "frontend/package.json",
-            "use": "@vercel/next"
-          }
-        ]
+    "builds": [
+      {
+        "src": "frontend/package.json",
+        "use": "@vercel/next" 
       },
-      "backend": {
-        "root": "backend",
-        "builds": [
-          {
-            "src": "backend/api/**/*.js",
-            "use": "@vercel/node"
-          }
-        ]
+      {
+        "src": "backend/api/**/*.js",
+        "use": "@vercel/node"
       }
-    },
+    ],
     "routes": [
       {
         "src": "/api/data",
