@@ -5,15 +5,16 @@ import { config } from "dotenv";
 
 // Load environment variables from .env file
 config();
+const __dirname = path.resolve();
 
 export default defineConfig({
   plugins: [react()],
   resolve: {
     alias: {
-      "@": path.resolve(import.meta.cwd(), "src"), // Use process.cwd() to resolve the project root
+      "@": path.resolve(__dirname, "./src"), // Alias for easy imports
     },
   },
   build: {
     outDir: "dist", // Ensure the build output is in the dist folder
-  },
+  }
 });
