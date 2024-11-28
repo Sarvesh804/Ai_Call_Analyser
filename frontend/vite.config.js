@@ -10,13 +10,10 @@ export default defineConfig({
   plugins: [react()],
   resolve: {
     alias: {
-      "@": path.resolve(__dirname, "./src"), // Alias for easy imports
+      "@": path.resolve(import.meta.cwd(), "src"), // Use process.cwd() to resolve the project root
     },
-  },
-  define: {
-    'process.env': process.env, // Make process.env available in the build
   },
   build: {
     outDir: "dist", // Ensure the build output is in the dist folder
-  }
+  },
 });
