@@ -1,28 +1,30 @@
 {
-    "version": 2,
-    "builds": [
-      {
-        "src": "frontend/package.json",
-        "use": "@vercel/static-build"
-      },
-      {
-        "src": "backend/api/**/*.js",
-        "use": "@vercel/node"
+  "version": 2,
+  "builds": [
+    {
+      "src": "frontend/package.json",
+      "use": "@vercel/static-build",
+      "config": {
+        "distDir": "frontend/dist"
       }
-    ],
-    "routes": [
-      {
-        "src": "/api/data",
-        "dest": "/backend/api/data.js"
-      },
-      {
-        "src": "/send-welcome-email",
-        "dest": "/backend/api/send-welcome-email.js"
-      },
-      {
-        "src": "/(.*)", 
-        "dest": "/frontend/build/$1" 
-      }
-    ]
-  }
-  
+    },
+    {
+      "src": "backend/api/**/*.js",
+      "use": "@vercel/node"
+    }
+  ],
+  "routes": [
+    {
+      "src": "/api/data",
+      "dest": "/backend/api/data.js"
+    },
+    {
+      "src": "/send-welcome-email",
+      "dest": "/backend/api/send-welcome-email.js"
+    },
+    {
+      "src": "/(.*)", 
+      "dest": "/frontend/dist/$1"
+    }
+  ]
+}
