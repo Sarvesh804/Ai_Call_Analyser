@@ -1,5 +1,4 @@
 require('dotenv').config();
-const cors = require('cors');
 
 const express = require('express');
 const nodemailer = require('nodemailer');
@@ -9,16 +8,14 @@ const bodyParser = require('body-parser');
 
 const app = express();
 
-app.use(bodyParser.urlencoded({ extended: true }));
-app.use(bodyParser.json());
-const cors = require('cors');
-
-console.log(process.env.FRONTEND_URL)
-
 app.use(cors({
   origin: process.env.FRONTEND_URL, 
   credentials: true, 
 }));
+
+app.use(bodyParser.urlencoded({ extended: true }));
+app.use(bodyParser.json());
+
 
 mongoose.connect(`${process.env.MONGODB_CONNECTION_STRING}/${process.env.MONGODB_DATABASE_NAME}`, {
   useNewUrlParser: true,
