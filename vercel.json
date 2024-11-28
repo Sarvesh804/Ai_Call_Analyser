@@ -3,7 +3,7 @@
     "builds": [
       {
         "src": "frontend/package.json",
-        "use": "@vercel/next" 
+        "use": "@vercel/static-build"
       },
       {
         "src": "backend/api/**/*.js",
@@ -18,6 +18,10 @@
       {
         "src": "/send-welcome-email",
         "dest": "/backend/api/send-welcome-email.js"
+      },
+      {
+        "src": "/(.*)", 
+        "dest": "/frontend/build/$1" 
       }
     ]
   }
