@@ -29,7 +29,7 @@ export function CallAnalysis() {
   useEffect(() => {
     const fetchCallData = async () => {
       try {
-        const response = await axios.get('http://localhost:3000/api/data/all');
+        const response = await axios.get('https://ai-call-analyser-backend.vercel.app/api/data/all');
         // Fetch data from the API
         console.log(response)
         if (response.data.success) {

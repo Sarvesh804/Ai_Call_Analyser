@@ -14,7 +14,7 @@ export default function Leaderboard() {
   useEffect(() => {
     const fetchLeaderboardData = async () => {
       try {
-        const response = await axios.get('http://localhost:3000/api/data/all'); // Fetching all call analysis data
+        const response = await axios.get('https://ai-call-analyser-backend.vercel.app/api/data/all'); // Fetching all call analysis data
         if (response.data.success) {
           const callData = response.data.data; // Assuming response.data.data contains the array of call records
           
