@@ -1,15 +1,33 @@
 {
-    "projects": [
+    "version": 2,
+    "projects": {
+      "frontend": {
+        "root": "frontend",
+        "builds": [
+          {
+            "src": "frontend/package.json",
+            "use": "@vercel/next"
+          }
+        ]
+      },
+      "backend": {
+        "root": "backend",
+        "builds": [
+          {
+            "src": "backend/api/**/*.js",
+            "use": "@vercel/node"
+          }
+        ]
+      }
+    },
+    "routes": [
       {
-        "src": "Frontend",
-        "buildCommand": "npm run build",
-        "outputDirectory": "build",
-        "framework": "react"
+        "src": "/api/data",
+        "dest": "/backend/api/data.js"
       },
       {
-        "src": "Backend",
-        "buildCommand": "npm run build",
-        "outputDirectory": "dist"
+        "src": "/send-welcome-email",
+        "dest": "/backend/api/send-welcome-email.js"
       }
     ]
   }
