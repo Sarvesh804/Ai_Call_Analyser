@@ -59,7 +59,10 @@ const Dashboard = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await fetch("https://ai-call-analyser-backend.vercel.app/api/data/all");
+        const response = await fetch("https://ai-call-analyser-backend.vercel.app/api/data/all", {
+          method: 'GET',
+          mode: 'no-cors'
+        });
         if (!response.ok) {
           throw new Error("Failed to fetch data");
         }
