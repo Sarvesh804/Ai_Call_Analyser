@@ -47,14 +47,14 @@ const Login = () => {
 
            <div className="mt-3">
             <p className="text-xs font-bold">👤 <b>Manager</b></p>
-            <p className="text-xs">🆔 <b>Username:</b> manager123</p>
-            <p className="text-xs">🔒 <b>Password:</b> managerpass</p>
+            <p className="text-xs">🆔 <b>Username:</b> EID23672</p>
+            <p className="text-xs">🔒 <b>Password:</b> aVp1RJqz</p>
           </div>
 
           <div className="mt-3">
             <p className="text-xs font-bold">👤 <b>Employee</b></p>
-            <p className="text-xs">🆔 <b>Username:</b> employee123</p>
-            <p className="text-xs">🔒 <b>Password:</b> employeepass</p>
+            <p className="text-xs">🆔 <b>Username:</b> EID05358</p>
+            <p className="text-xs">🔒 <b>Password:</b> ezK0zyAM</p>
           </div>
 
         <p className="text-xs mt-3 opacity-75">For admin see documentation.</p>
